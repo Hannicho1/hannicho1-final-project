@@ -1,18 +1,381 @@
-// Hello World
 <!DOCTYPE html>
-<html>
+<html lang="en" >
 <head>
-    <title>Shuttle Bus Tracker</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <title>My Project</title>
+  <link rel="stylesheet" href="css/reset.min.css">
+ 
+  <link rel="stylesheet" href="css/mainstyle.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/courses.css">
+
+  <link rel="stylesheet" href="css/scrollbarivisible.css">
+
 </head>
 <body>
-    <header> == $0
-        <h1> Shuttle bus Trucker</h1>
-    </header>
-    <main>
-        <div class="container"> </div>
-        <script src="script.js"></script>
-    </main>
+<div class="app">
+	<header class="app-header">
+		<div class="app-header-logo">
+			<div class="logo">
+				<span class="logo-icon">
+					<img src="images/University_of_Maryland_seal.svg" />
+				</span>
+				<h1 class="logo-title">
+					<span>University</span>
+					<span>of Maryland</span>
+				</h1>
+			</div>
+		</div>
+		<div class="app-header-navigation">
+			<div class="tabs">
+				<a href="#" class="active overview">
+					Overview
+				</a>
+				<a href="#"  class="courses">
+					Courses
+				</a>
+				<a href="#" class="routes">
+					Routes
+				</a>
+				<a href="#" class="shuttle">
+					Shuttle bus
+				</a>
+				<a href="#">
+					Informations
+				</a>
+			</div>
+		</div>
+		<div class="app-header-actions">
+			
+			<div class="app-header-actions-buttons">
+				<button class="icon-button large" id="mode-switch">
+
+                </button>
+                <button class="mode-switch" title="Switch Theme">
+                  <i class="ph-magnifying-glass"></i>
+                  <svg class="moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" width="24" height="24" viewBox="0 0 24 24">
+                    <defs></defs>
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                  </svg>
+                </button>
+			</div>
+		</div>
+		<div class="app-header-mobile">
+			<button class="icon-button large">
+				<i class="ph-list"></i>
+			</button>
+		</div>
+
+	</header>
+	<div class="app-body">
+		<div class="app-body-navigation">
+			<nav class="navigation">
+				<a href="#" class="overview">
+					<i class="ph-browsers"></i>
+					<span>Dashboard</span>
+				</a>
+				<a href="#" class="courses">
+					<i class="ph-check-square"></i>
+					<span>Courses</span>
+				</a>
+				<a href="#">
+					<i class="ph-swap"></i>
+					<span>Routes</span>
+				</a>
+				<a href="#">
+					<i class="ph-file-text"></i>
+					<span>Shuttle bus </span>
+				</a>
+				<a href="#">
+					<i class="ph-clipboard-text"></i>
+					<span>Informations</span>
+				</a>
+			</nav>
+			<footer class="footer">
+				<h1>Hana<small>©</small></h1>
+				<div>
+                    UMD.io ©
+					<br />
+					Final Project
+				</div>
+			</footer>
+		</div>
+		<div class="app-body-main-content coursesbody invisible" >
+			<section class="service-section">
+				<h2>Courses</h2>
+				<div class="service-section-header">
+					<div class="search-field">
+						<i class="ph-magnifying-glass"></i>
+						<input type="text" placeholder="COURSE ID" id="course_search">
+					</div>
+					<div class="dropdown-field">
+						<select>
+							<option>201901</option>
+							<option>201905</option>
+                            <option>201908</option>
+						</select>
+						<i class="ph-caret-down"></i>
+					</div>
+					<button class="flat-button">
+						Search
+					</button>
+				</div>
+				<div class="mobile-only">
+					<button class="flat-button">
+						Toggle search
+					</button>
+				</div>
+				<div class="tiles" style="display: none;">
+					<article class="tile">
+						<div class="tile-header">
+							<i class="ph-lightning-light"></i>
+							<h3>
+								<span>Courses</span>
+								<span>Catalogue</span>
+							</h3>
+						</div>
+						<a href="#">
+							<span>Informations about the Courses</span>
+							<span class="icon-button">
+								<i class="ph-caret-right-bold"></i>
+							</span>
+						</a>
+					</article>
+					
+					
+				</div>
+			</section>
+			<section class="coursediv-section">
+				<div class="coursediv-section-header">
+					<h2>List Courses</h2>
+					<div class="filter-options">
+						<p> </p>
+						<button class="icon-button">
+							<i class="ph-funnel"></i>
+						</button>
+						<button class="icon-button">
+							<i class="ph-plus"></i>
+						</button>
+					</div>
+				</div>
+				<div class="coursedivs">
+					
+				</div>
+			</section>
+		</div>
+        <div class="app-body-main-content routebody invisible" >
+			<section class="service-section">
+				<h2>Routes</h2>
+				<div class="service-section-header">
+					<div class="search-field">
+						<i class="ph-magnifying-glass"></i>
+						<input type="text" placeholder="COURSE ID" id="course_search">
+					</div>
+					<div class="dropdown-field">
+						<select>
+							<option>201901</option>
+							<option>201905</option>
+                            <option>201908</option>
+						</select>
+						<i class="ph-caret-down"></i>
+					</div>
+					<button class="flat-button">
+						Search
+					</button>
+				</div>
+				<div class="mobile-only">
+					<button class="flat-button">
+						Toggle search
+					</button>
+				</div>
+				<div class="tiles" style="display: none;">
+					<article class="tile">
+						<div class="tile-header">
+							<i class="ph-lightning-light"></i>
+							<h3>
+								<span>Courses</span>
+								<span>Catalogue</span>
+							</h3>
+						</div>
+						<a href="#">
+							<span>Informations about the Courses</span>
+							<span class="icon-button">
+								<i class="ph-caret-right-bold"></i>
+							</span>
+						</a>
+					</article>
+					
+					
+				</div>
+			</section>
+			<section class="coursediv-section">
+				<div class="coursediv-section-header">
+					<h2>List of Routes</h2>
+					<div class="filter-options">
+						<p> </p>
+						<button class="icon-button">
+							<i class="ph-funnel"></i>
+						</button>
+						<button class="icon-button">
+							<i class="ph-plus"></i>
+						</button>
+					</div>
+				</div>
+				<div class="coursedivs">
+					
+				</div>
+			</section>
+		</div>
+        
+        <div class="app-body-main-content overviewbody">
+			<section class="service-section">
+				<h2>Overview</h2>
+				
+				<div class="tiles">
+					<article class="tile">
+						<div class="tile-header">
+							<i class="ph-lightning-light"></i>
+							<h3>
+								<span>Cources</span>
+								<span>Catalogue</span>
+							</h3>
+						</div>
+						<a href="#">
+							<span>Informations about the Courses</span>
+							<span class="icon-button">
+								<i class="ph-caret-right-bold"></i>
+							</span>
+						</a>
+					</article>
+					<article class="tile busroute">
+						<div class="tile-header">
+							<i class="ph-fire-simple-light"></i>
+							<h3>
+								<span>Bus </span>
+								<span></span>
+							</h3>
+						</div>
+						<a href="#">
+							<span>list of the available routes</span>
+							<span class="icon-button">
+								<i class="ph-caret-right-bold"></i>
+							</span>
+						</a>
+					</article>
+					<article class="tile busshuttle">
+						<div class="tile-header">
+							<i class="ph-file-light"></i>
+							<h3>
+								<span>Shuttle</span>
+								<span>bus</span>
+							</h3>
+						</div>
+						<a href="#">
+							<span>University's Shuttle bus services</span>
+							<span class="icon-button">
+								<i class="ph-caret-right-bold"></i>
+							</span>
+						</a>
+					</article>
+				</div>
+				<div class="service-section-footer">
+					<p>The data that provides easy access to University's Informations .</p>
+				</div>
+			</section>
+			<section class="coursediv-section">
+				<div class="coursediv-section-header">
+					<h2>Latest Update</h2>
+					<div class="filter-options">
+						<p>To be filled </p>
+						<button class="icon-button">
+							<i class="ph-funnel"></i>
+						</button>
+						<button class="icon-button">
+							<i class="ph-plus"></i>
+						</button>
+					</div>
+				</div>
+				<div class="coursedivs">
+					<div class="coursediv" id="first">
+						<div class="coursediv-logo">
+							<img src="images/University_of_Maryland_seal.svg" />
+						</div>
+						<dl class="coursediv-details" >
+							<div>
+								<dt id="over10"></dt>
+								<dd id="over11"></dd>
+							</div>
+							<div>
+								<dt id="over20"></dt>
+								<dd id="over21"></dd>
+							</div>
+							<div>
+								<dt id="over30"></dt>
+								<dd id="over31"></dd>
+							</div>
+						</dl>
+						<div class="coursediv-number" id="over4">
+						</div>
+					</div>
+					<div class="coursediv" id="second">
+						<div class="coursediv-logo">
+							<img src="images/University_of_Maryland_seal.svg" />
+						</div>
+						<dl class="coursediv-details" >
+							<div>
+								<dt id="over10"></dt>
+								<dd id="over11"></dd>
+							</div>
+							<div>
+								<dt id="over20"></dt>
+								<dd id="over21"></dd>
+							</div>
+							<div>
+								<dt id="over30"></dt>
+								<dd id="over31"></dd>
+							</div>
+						</dl>
+						<div class="coursediv-number" id="over4">
+							
+						</div>
+					</div>
+					<div class="coursediv" id="third">
+						<div class="coursediv-logo">
+							<img src="images/University_of_Maryland_seal.svg" />
+						</div>
+						<dl class="coursediv-details" >
+							<div>
+								<dt id="over10"></dt>
+								<dd id="over11"></dd>
+							</div>
+							<div>
+								<dt id="over20"></dt>
+								<dd id="over21"></dd>
+							</div>
+							<div>
+								<dt id="over30"></dt>
+								<dd id="over31"></dd>
+							</div>
+						</dl>
+						<div class="coursediv-number" id="over4">
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+		
+		
+		
+	</div>
+</div>
+<!-- partial -->
+  <script  src="js/script.js"></script>
+  <script  src="js/cources.js"></script>
+  <script  src="js/bus.js"></script>
+
+
 </body>
 </html>
+
 
