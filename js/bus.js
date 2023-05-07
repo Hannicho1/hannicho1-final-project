@@ -28,13 +28,8 @@ function markerPlace(array, map) {
     });
 
     array.forEach((item) => {
-        // L.marker([item.lat, item.long]).addTo(map);
-        L.circle([item.lat, item.long], {
-            color: 'red',
-            fillColor: '#f03',
-            fillOpacity: 0.2,
-            radius: 40
-        }).addTo(map);
+        L.marker([item.lat, item.long]).addTo(map);
+        
 
     })
 
@@ -104,7 +99,7 @@ async function loadDetailRoute(id_selected) {
     // newDivExpand.style.display = "";
     // localStorage.clear('localStorage Check', localStorage.getItem("routeData"))
 
-    if ("paths" in parsedData[id_selected] && "schedule" in parsedData[id_selected] && false) {
+    if ("paths" in parsedData[id_selected] && "schedule" in parsedData[id_selected]) {
         data = parsedData[id_selected];
         console.log("load local", data)
         // return parsedData;
@@ -296,6 +291,10 @@ async function loadDataRoute() {
             first = key;
         }
         // routeData[route.route_id] = route;
+        if(document.getElementById(key)!=null){
+            document.getElementById(key).style.display="";
+            continue;
+        }
         const newDiv = document.createElement("div");
         const newDivExpand = document.createElement("div");
 
@@ -423,9 +422,12 @@ async function showShuttlePage() {
 
 }
 const routes = document.querySelector('.routes');
-routes.addEventListener('click', loadRoutes);
+// routes.addEventListener('click', loadRoutes);
+document.querySelectorAll(".routes").forEach(item=> {item.addEventListener('click',loadRoutes)});
+
 const shuttle = document.querySelector('.shuttle');
-shuttle.addEventListener('click', showShuttlePage);
+// shuttle.addEventListener('click', showShuttlePage);
+document.querySelectorAll(".shuttle").forEach(item=> {item.addEventListener('click',showShuttlePage)});
 
 const route_search = document.querySelector('#route_search');
 route_search.addEventListener('input', function (e) {
@@ -443,6 +445,8 @@ route_search.addEventListener('input', function (e) {
             } else {
                 document.getElementById(key).style.display = "none";
                 document.getElementById(key + "Expand").style.display = "none";
+                document.getElementById(key + "Shuttle").style.display = "none";
+
             }
         }
     }
@@ -459,11 +463,11 @@ select_route.addEventListener("change", function (e) {
 
         if (val == key) {
             document.getElementById(key).style.display = "";
-
             loadDetailRoute(key);
         } else {
             document.getElementById(key).style.display = "none";
             document.getElementById(key + "Expand").style.display = "none";
+            document.getElementById(key + "Shuttle").style.display = "none";
         }
     }
 })

@@ -19,11 +19,12 @@ async function loadData() {
     document.querySelector('.coursesbody').classList.toggle('invisible');
     coursesbody = document.querySelector('.coursesbody');
 
-    const response = await fetch("https://api.umd.io/v1/courses");
+    const response = await fetch("https://api.umd.io/v1/courses/list");
     const jsonData = await response.json();
     coursesJson = jsonData;
+    //console.log(jsonData);
     for (i = 0; i < jsonData.length; i++) {
-        console.log("loading");
+        //console.log("loading");
         course = jsonData[i];
         const newDiv = document.createElement("div");
         const newDivExpand = document.createElement("div");
@@ -47,8 +48,8 @@ async function loadData() {
         dt = document.createElement('dt');
         dd = document.createElement('dd');
         divTemp.appendChild(dt);
-        dt.innerHTML = course.course_id;
-        dd.innerHTML = course.name;
+        dt.innerHTML ="Course ID";
+        dd.innerHTML = course.course_id;
         divTemp.appendChild(dd);
         newDivDetail.appendChild(divTemp);
 
@@ -57,10 +58,10 @@ async function loadData() {
         dd = document.createElement('dd');
         divTemp.appendChild(dt);
         divTemp.appendChild(dd);
-        dt.innerHTML = "Department";
-        dd.innerHTML = course.department;
+        dt.innerHTML = "Course Name";
+        dd.innerHTML = course.name;
         newDivDetail.appendChild(divTemp);
-
+/*
         divTemp = document.createElement('div');
         dt = document.createElement('dt');
         dd = document.createElement('dd');
@@ -73,13 +74,16 @@ async function loadData() {
         divTemp = document.createElement('div');
         divTemp.className = 'coursediv-number';
         divTemp.innerHTML = "Credits: " + course1.credits;
+        */
         newDivDetail.appendChild(divTemp);
         coursesbody.appendChild(newDiv);
         coursesbody.appendChild(newDivExpand);
     }
 }
 var courses = document.querySelector('.courses');
-courses.addEventListener('click', loadData);
+// courses.addEventListener('click', loadData);
+document.querySelectorAll(".courses").forEach(item=> {item.addEventListener('click',loadData)});
+
 
 function check_name(name1, name2, name3, comp1, comp2, comp3) {
     if (name1.toUpperCase().indexOf(comp1) > -1 && name2.toUpperCase().indexOf(comp2) > -1 && name3.toUpperCase().indexOf(comp3) > -1) {
@@ -111,14 +115,25 @@ var course_search = document.querySelector('#course_search');
 course_search.addEventListener('input', function (e) {
     console.log(e.target.value);
     value=e.target.value;
+    const select=document.getElementById('course-select').value;
+    
     if(coursesJson!= null){
         for(i =0; i<coursesJson.length;i++){
             course=coursesJson[i];
-            if(course.course_id.toUpperCase().indexOf(value.toUpperCase())>-1 || course.name.toUpperCase().indexOf(value.toUpperCase())>-1){
-                document.getElementById(course.course_id).style.display="";
-            }else{
-                document.getElementById(course.course_id).style.display="none";
+            if(select=='1'){
+                if(course.course_id.toUpperCase().indexOf(value.toUpperCase())>-1 ){
+                    document.getElementById(course.course_id).style.display="";
+                }else{
+                    document.getElementById(course.course_id).style.display="none";
+                }
+            }else if(select=='2'){
+                if(course.name.toUpperCase().indexOf(value.toUpperCase())>-1){
+                    document.getElementById(course.course_id).style.display="";
+                }else{
+                    document.getElementById(course.course_id).style.display="none";
+                }
             }
+           
         }
     }   
 })

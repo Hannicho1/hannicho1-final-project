@@ -7,9 +7,7 @@ modeSwitch.addEventListener('click', function () {
     modeSwitch.classList.toggle('active');
 });
 
-function overview(){
-    fetch()
-}
+
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
@@ -53,6 +51,8 @@ async function loadOverview() {
     first.querySelector("#over31").innerHTML=course1.semester;
     first.querySelector("#over4").innerHTML="Credits: "+course1.credits;
     console.log(course1);
+    document.querySelector('.overviewbody').scrollTo(0,document.body.scrollHeight);
+
 
   };
 
@@ -95,6 +95,8 @@ async function loadOverview() {
     first.querySelector("#over30").innerHTML="";
     first.querySelector("#over31").innerHTML="";
     first.querySelector("#over4").innerHTML="";
+    //window.scrollTo(0,500);
+    document.querySelector('.overviewbody').scrollTo(0,document.body.scrollHeight);
 
   }
 
@@ -110,7 +112,7 @@ async function loadOverview() {
     response2 = await fetch("https://api.umd.io/v1/bus/routes/"+route.route_id+"/schedules");
     jsonData2 = await response2.json();
     num=getRandomInt(jsonData2.length-1);
-    shuttle=jsonData2[num];
+    var shuttle=jsonData2[num];
 
     first=document.getElementById("first");
     first.querySelector("#over10").innerHTML="Route";
@@ -157,12 +159,15 @@ async function loadOverview() {
     first.querySelector("#over21").innerHTML=shuttle.direction;
     first.querySelector("#over30").innerHTML="Days";
     first.querySelector("#over31").innerHTML=shuttle.days;
-    first.querySelector("#over4").innerHTML="";
+    first.querySelector("#over4").innerHTML="";    document.querySelector('.overviewbody').scrollTo(0,document.body.scrollHeight);
+
+
 
   }
 loadOverview();
 
-
+busroutebtn=document.querySelector(".courseoverview");
+busroutebtn.addEventListener("click", loadOverview);
 
 busroutebtn=document.querySelector(".busroute");
 busroutebtn.addEventListener("click", loadBusroute);
@@ -189,4 +194,5 @@ function showOverViewr(){
     coursesbody = document.querySelector('.coursesbody');
 }
 var overview = document.querySelector('.overview');
-overview.addEventListener('click', showOverViewr);
+document.querySelectorAll(".overview").forEach(item=> {item.addEventListener('click',showOverViewr)});
+// overview.addEventListener('click', showOverViewr);

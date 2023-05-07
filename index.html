@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>My Project</title>
+    <title>Hannicho final Project</title>
     <link rel="stylesheet" href="css/reset.min.css">
 
     <link rel="stylesheet" href="css/mainstyle.css">
@@ -52,7 +52,7 @@
                     <a href="#" class="courses">
                         Courses
                     </a>
-                    <a href="#">
+                    <a href="#" style="display: none;">
                         Informations
                     </a>
                 </div>
@@ -91,15 +91,15 @@
                         <i class="ph-check-square"></i>
                         <span>Courses</span>
                     </a>
-                    <a href="#">
+                    <a href="#" class="routes">
                         <i class="ph-swap"></i>
                         <span>Routes</span>
                     </a>
-                    <a href="#">
+                    <a href="#" class="shuttle">
                         <i class="ph-file-text"></i>
-                        <span>Shuttle bus </span>
+                        <span>Schedules bus </span>
                     </a>
-                    <a href="#">
+                    <a href="#" style="display:none;">
                         <i class="ph-clipboard-text"></i>
                         <span>Informations</span>
                     </a>
@@ -122,10 +122,9 @@
                             <input type="text" placeholder="COURSE ID" id="course_search">
                         </div>
                         <div class="dropdown-field">
-                            <select>
-                                <option>201901</option>
-                                <option>201905</option>
-                                <option>201908</option>
+                            <select id="course-select">
+                                <option value="1">BY COURSE ID</option>
+                                <option value="2">BY Name</option>
                             </select>
                             <i class="ph-caret-down"></i>
                         </div>
@@ -220,7 +219,7 @@
                     <h2>Overview</h2>
 
                     <div class="tiles">
-                        <article class="tile">
+                        <article class="tile courseoverview">
                             <div class="tile-header">
                                 <i class="ph-lightning-light"></i>
                                 <h3>
