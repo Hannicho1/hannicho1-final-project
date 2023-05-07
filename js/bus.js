@@ -29,12 +29,7 @@ function markerPlace(array, map) {
 
     array.forEach((item) => {
         L.marker([item.lat, item.long]).addTo(map);
-        // L.circle([item.lat, item.long], {
-        //     color: 'red',
-        //     fillColor: '#f03',
-        //     fillOpacity: 0.2,
-        //     radius: 40
-        // }).addTo(map);
+        
 
     })
 
