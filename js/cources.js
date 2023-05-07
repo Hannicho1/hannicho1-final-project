@@ -79,7 +79,9 @@ async function loadData() {
     }
 }
 var courses = document.querySelector('.courses');
-courses.addEventListener('click', loadData);
+// courses.addEventListener('click', loadData);
+document.querySelectorAll(".courses").forEach(item=> {item.addEventListener('click',loadData)});
+
 
 function check_name(name1, name2, name3, comp1, comp2, comp3) {
     if (name1.toUpperCase().indexOf(comp1) > -1 && name2.toUpperCase().indexOf(comp2) > -1 && name3.toUpperCase().indexOf(comp3) > -1) {

@@ -110,7 +110,7 @@ async function loadOverview() {
     response2 = await fetch("https://api.umd.io/v1/bus/routes/"+route.route_id+"/schedules");
     jsonData2 = await response2.json();
     num=getRandomInt(jsonData2.length-1);
-    shuttle=jsonData2[num];
+    var shuttle=jsonData2[num];
 
     first=document.getElementById("first");
     first.querySelector("#over10").innerHTML="Route";
@@ -189,4 +189,5 @@ function showOverViewr(){
     coursesbody = document.querySelector('.coursesbody');
 }
 var overview = document.querySelector('.overview');
-overview.addEventListener('click', showOverViewr);
+document.querySelectorAll(".overview").forEach(item=> {item.addEventListener('click',showOverViewr)});
+// overview.addEventListener('click', showOverViewr);
