@@ -65,7 +65,7 @@
     margin-top: 1rem;
   }
 }
-.coursediv-details dd {
+.coursediv-details p {
   color: var(--c-text-tertiary);
   margin-top: 2px;
 }

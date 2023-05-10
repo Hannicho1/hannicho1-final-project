@@ -7,7 +7,9 @@ modeSwitch.addEventListener('click', function () {
     modeSwitch.classList.toggle('active');
 });
 
-
+function overview(){
+    fetch()
+}
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
@@ -95,7 +97,7 @@ async function loadOverview() {
     first.querySelector("#over30").innerHTML="";
     first.querySelector("#over31").innerHTML="";
     first.querySelector("#over4").innerHTML="";
-    //window.scrollTo(0,500);
+    window.scrollTo(0, document.body.scrollHeight);
     document.querySelector('.overviewbody').scrollTo(0,document.body.scrollHeight);
 
   }
@@ -159,15 +161,15 @@ async function loadOverview() {
     first.querySelector("#over21").innerHTML=shuttle.direction;
     first.querySelector("#over30").innerHTML="Days";
     first.querySelector("#over31").innerHTML=shuttle.days;
-    first.querySelector("#over4").innerHTML="";    document.querySelector('.overviewbody').scrollTo(0,document.body.scrollHeight);
-
-
+    first.querySelector("#over4").innerHTML="";
+    document.querySelector('.overviewbody').scrollTo(0, document.body.scrollHeight);
+    document.querySelector('.overviewbody').scrollTo(0,document.body.scrollHeight);
 
   }
 loadOverview();
 
-busroutebtn=document.querySelector(".courseoverview");
-busroutebtn.addEventListener("click", loadOverview);
+courseoverview=document.querySelector(".courseoverview");
+courseoverview.addEventListener("click", loadOverview);
 
 busroutebtn=document.querySelector(".busroute");
 busroutebtn.addEventListener("click", loadBusroute);

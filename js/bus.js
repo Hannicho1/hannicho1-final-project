@@ -29,7 +29,12 @@ function markerPlace(array, map) {
 
     array.forEach((item) => {
         L.marker([item.lat, item.long]).addTo(map);
-        
+        // L.circle([item.lat, item.long], {
+        //     color: 'red',
+        //     fillColor: '#f03',
+        //     fillOpacity: 0.2,
+        //     radius: 40
+        // }).addTo(map);
 
     })
 
@@ -54,8 +59,8 @@ function showSchedule(newDiv, data) {
         newDivDetail.className = 'routediv-details';
         newDiv.appendChild(newDivDetail);
         divTemp = document.createElement('div');
-        dt = document.createElement('dt');
-        dd = document.createElement('dd');
+        dt = document.createElement('h5');
+        dd = document.createElement('p');
         divTemp.appendChild(dt);
         dt.innerHTML = "days";
         dd.innerHTML = schedule.days;
@@ -63,8 +68,8 @@ function showSchedule(newDiv, data) {
         newDivDetail.appendChild(divTemp);
 
         divTemp = document.createElement('div');
-        dt = document.createElement('dt');
-        dd = document.createElement('dd');
+        dt = document.createElement('h5');
+        dd = document.createElement('p');
         divTemp.appendChild(dt);
         divTemp.appendChild(dd);
         dt.innerHTML = "Direction";
@@ -72,8 +77,8 @@ function showSchedule(newDiv, data) {
         newDivDetail.appendChild(divTemp);
 
         divTemp = document.createElement('div');
-        dt = document.createElement('dt');
-        dd = document.createElement('dd');
+        dt = document.createElement('h5');
+        dd = document.createElement('p');
         divTemp.appendChild(dt);
         divTemp.appendChild(dd);
         dt.innerHTML = "Stops";
@@ -146,14 +151,14 @@ async function loadDetailRoute(id_selected) {
         divData.className = 'routediv-details';
 
         divTemp = document.createElement('div');
-        dt = document.createElement('dt');
+        dt = document.createElement('h5');
 
         divTemp.appendChild(dt);
         dt.innerHTML = "Directions";
         data.directions.forEach((item) => {
             // const {coordinates} = item.geocoded_column_1;
             // L.marker([item.lat, item.long]).addTo(map);
-            dd = document.createElement('dd');
+            dd = document.createElement('p');
             dd.innerHTML = "-" + item.title;
             divTemp.appendChild(dd);
 
@@ -327,8 +332,8 @@ async function loadDataRoute() {
         newDivDetail.className = 'routediv-details';
         newDiv.appendChild(newDivDetail);
         divTemp = document.createElement('div');
-        dt = document.createElement('dt');
-        dd = document.createElement('dd');
+        dt = document.createElement('h5');
+        dd = document.createElement('p');
         divTemp.appendChild(dt);
         dt.innerHTML = route.title;
         // dd.innerHTML = route.name;
@@ -336,8 +341,8 @@ async function loadDataRoute() {
         newDivDetail.appendChild(divTemp);
 
         divTemp = document.createElement('div');
-        dt = document.createElement('dt');
-        dd = document.createElement('dd');
+        dt = document.createElement('h5');
+        dd = document.createElement('p');
         divTemp.appendChild(dt);
         divTemp.appendChild(dd);
         dt.innerHTML = "No";
