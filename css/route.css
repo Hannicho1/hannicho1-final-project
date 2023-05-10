@@ -103,7 +103,7 @@
       margin-top: 1rem;
     }
   }
-  .routediv-details dd {
+  .routediv-details p {
     color: var(--c-text-tertiary);
     margin-top: 2px;
   }

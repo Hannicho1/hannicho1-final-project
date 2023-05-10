@@ -1,4 +1,4 @@
-var coursesJson = null
+Json = null
 async function loadData() {
     // document.documentElement.classList.toggle('light');
     if(document.querySelector('.coursesbody').classList.contains("invisible")==false){
@@ -45,8 +45,8 @@ async function loadData() {
         newDivDetail.className = 'coursediv-details';
         newDiv.appendChild(newDivDetail);
         divTemp = document.createElement('div');
-        dt = document.createElement('dt');
-        dd = document.createElement('dd');
+        dt = document.createElement('h5');
+        dd = document.createElement('p');
         divTemp.appendChild(dt);
         dt.innerHTML ="Course ID";
         dd.innerHTML = course.course_id;
@@ -54,8 +54,8 @@ async function loadData() {
         newDivDetail.appendChild(divTemp);
 
         divTemp = document.createElement('div');
-        dt = document.createElement('dt');
-        dd = document.createElement('dd');
+        dt = document.createElement('h5');
+        dd = document.createElement('p');
         divTemp.appendChild(dt);
         divTemp.appendChild(dd);
         dt.innerHTML = "Course Name";
@@ -63,8 +63,8 @@ async function loadData() {
         newDivDetail.appendChild(divTemp);
 /*
         divTemp = document.createElement('div');
-        dt = document.createElement('dt');
-        dd = document.createElement('dd');
+        dt = document.createElement('h5');
+        dd = document.createElement('p');
         divTemp.appendChild(dt);
         divTemp.appendChild(dd);
         dt.innerHTML = "Semester";
