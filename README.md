@@ -1,5 +1,9 @@
 # hannicho1-final-project
+# https://hannicho1.github.io/hannicho1-final-project/
+# Hannicho final project
+# the targeted browsers are both ios and android
 ## API used umd.io
+
 In this application, umd.io was used to get the information about the courses, routes, and bus schedule
  
 # First page
