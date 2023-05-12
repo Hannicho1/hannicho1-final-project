@@ -84,33 +84,17 @@ var courses = document.querySelector('.courses');
 // courses.addEventListener('click', loadData);
 document.querySelectorAll(".courses").forEach(item=> {item.addEventListener('click',loadData)});
 
-
-function check_name(name1, name2, name3, comp1, comp2, comp3) {
-    if (name1.toUpperCase().indexOf(comp1) > -1 && name2.toUpperCase().indexOf(comp2) > -1 && name3.toUpperCase().indexOf(comp3) > -1) {
-        // console.log("1");
-        return true;
-    } else if (name1.toUpperCase().indexOf(comp2) > -1 && name2.toUpperCase().indexOf(comp1) > -1 && name3.toUpperCase().indexOf(comp3) > -1) {
-        // console.log("2");
-        return true;
-    } else if (name1.toUpperCase().indexOf(comp3) > -1 && name2.toUpperCase().indexOf(comp2) > -1 && name3.toUpperCase().indexOf(comp1) > -1) {
-        // console.log("3");
-        return true;
-    } else if (name1.toUpperCase().indexOf(comp1) > -1 && name2.toUpperCase().indexOf(comp3) > -1 && name3.toUpperCase().indexOf(comp2) > -1) {
-        // console.log("4");
-
-        return true;
-    } else if (name1.toUpperCase().indexOf(comp2) > -1 && name2.toUpperCase().indexOf(comp3) > -1 && name3.toUpperCase().indexOf(comp1) > -1) {
-        // console.log("5");
-
-        return true;
-    } else if (name1.toUpperCase().indexOf(comp3) > -1 && name2.toUpperCase().indexOf(comp1) > -1 && name3.toUpperCase().indexOf(comp2) > -1) {
-        // console.log("6");
-
-        return true;
-    } else {
-        return false;
+function mobileTest(){
+    if(window.innerWidth<700){
+        loadData();
+    }else{
+        loadOverview();
     }
+    
 }
+courseoverview=document.querySelector(".courseoverview");
+courseoverview.addEventListener("click", mobileTest);
+
 var course_search = document.querySelector('#course_search');
 course_search.addEventListener('input', function (e) {
     console.log(e.target.value);

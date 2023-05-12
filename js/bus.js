@@ -426,6 +426,8 @@ async function showShuttlePage() {
     loadDataRoute();
 
 }
+
+
 const routes = document.querySelector('.routes');
 // routes.addEventListener('click', loadRoutes);
 document.querySelectorAll(".routes").forEach(item=> {item.addEventListener('click',loadRoutes)});
@@ -433,6 +435,27 @@ document.querySelectorAll(".routes").forEach(item=> {item.addEventListener('clic
 const shuttle = document.querySelector('.shuttle');
 // shuttle.addEventListener('click', showShuttlePage);
 document.querySelectorAll(".shuttle").forEach(item=> {item.addEventListener('click',showShuttlePage)});
+function mobileTest(){
+    if(window.innerWidth<700){
+        loadRoutes();
+    }else{
+        loadBusroute();
+    }
+    
+}
+function mobileTest2(){
+    if(window.innerWidth<700){
+        showShuttlePage();
+    }else{
+        loadBusShuttle();
+    }
+    
+}
+
+busroutebtn=document.querySelector(".busroute");
+busroutebtn.addEventListener("click", mobileTest);
+busroutebtn=document.querySelector(".busshuttle");
+busroutebtn.addEventListener("click", mobileTest2);
 
 const route_search = document.querySelector('#route_search');
 route_search.addEventListener('input', function (e) {
