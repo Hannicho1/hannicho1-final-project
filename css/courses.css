@@ -1,4 +1,5 @@
 
+
 .coursedivs {
   display: flex;
   flex-direction: column;
@@ -11,12 +12,7 @@
   width: 100%;
   font-size: 0.875rem;
 }
-@media (max-width: 1000px) {
-  .coursediv {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-}
+
 .coursediv + * {
   margin-top: 2rem;
 }
@@ -33,6 +29,18 @@
 .coursediv-logo img {
   width: 45%;
 }
+@media (max-width: 1000px) {
+    .coursediv-logo {
+        display: none;
+    }
+    .coursediv {
+      align-items: flex-start;
+      flex-direction: column;
+      font-size: 2em;
+      /* border-top: 1px solid var(--c-gray-600); */
+      border-bottom: 1px solid var(--c-gray-600);
+    }
+  }
 
 .coursediv-details {
   margin-left: 2rem;
@@ -86,4 +94,3 @@
     justify-content: flex-start;
   }
 }
-
