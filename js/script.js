@@ -15,6 +15,10 @@ function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   }
 async function loadOverview() {
+    console.log(window.innerWidth);
+    if(window.innerWidth<700){
+
+    }
     const response = await fetch("https://api.umd.io/v1/courses");
     const jsonData = await response.json();
     // console.log(jsonData);
@@ -60,7 +64,6 @@ async function loadOverview() {
 
 
   async function loadBusroute(){
-    console.log("load load");
     const response = await fetch("https://api.umd.io/v1/bus/routes");
     const jsonData = await response.json();
     console.log(jsonData);
@@ -103,7 +106,6 @@ async function loadOverview() {
   }
 
   async function loadBusShuttle(){
-    console.log("load load");
     const response = await fetch("https://api.umd.io/v1/bus/routes");
     const jsonData = await response.json();
     console.log(jsonData);
@@ -168,13 +170,7 @@ async function loadOverview() {
   }
 loadOverview();
 
-courseoverview=document.querySelector(".courseoverview");
-courseoverview.addEventListener("click", loadOverview);
 
-busroutebtn=document.querySelector(".busroute");
-busroutebtn.addEventListener("click", loadBusroute);
-busroutebtn=document.querySelector(".busshuttle");
-busroutebtn.addEventListener("click", loadBusShuttle);
 
 function showOverViewr(){
     if(document.querySelector('.overviewbody').classList.contains("invisible")==false){

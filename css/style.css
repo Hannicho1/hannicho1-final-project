@@ -153,9 +153,11 @@ a {
 @media (max-width: 1200px) {
   .app-body {
     grid-template-columns: 1fr;
+  
   }
   .app-body > * {
     margin-bottom: 3.5rem;
+   
   }
 }
 
@@ -177,6 +179,11 @@ a {
 @media (max-width: 1200px) {
   .app-body-navigation {
     display: none;
+  }
+  .app-body-main-content{
+    overflow-y: scroll;
+    height: 100%;
+    width: 100%;
   }
 }
 
@@ -466,7 +473,7 @@ a {
 }
 @media (max-width: 1000px) {
   .service-section-header {
-    display: none;
+    /* display: none; */
   }
 }
 
